@@ -6,7 +6,7 @@
                         <ul class="header-social">    
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/madhusudhanrk/"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/madhusudhanrk/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                             <li> <a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                         </ul>
                     </div>
