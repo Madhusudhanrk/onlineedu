@@ -34,8 +34,19 @@
                                         {{-- <li><a href="regi_instru"><i class="ti-book"></i>Become Instructor</a></li> --}}
                                         <li><a href="login_instru"><i class="ti-dashboard"></i>Instructor Panel</a></li>
                                         <li><a href="admin_login"><i class="ti-dashboard"></i>Admin Panel</a></li>
-                                        <li><a href="login"><i class="ti-user"></i>SignIn</a></li>
-                                        <li><a href="signup"><i class="ti-lock"></i>SignUp</a></li>
+                                        <?php 
+                        
+                                        if(session()->has('user_login_id_set')){
+                                           
+                                            echo "<li><a href='u_logout'><i class='ti-shift-right'></i>"."Logout"."</a></li>";
+                                        }else{
+                                        ?>
+                                            <li><a href="login"><i class="ti-user"></i>SignIn</a></li>
+                                            <li><a href="signup"><i class="ti-lock"></i>SignUp</a></li>
+                                        <?php
+                                        }
+                                        ?>
+                                        
                                     </ul>
                                 </div>
                             </div>
