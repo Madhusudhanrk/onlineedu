@@ -2,7 +2,7 @@
 // $pdf_url = $_GET["location"];
   
 // $pdf_path = "http://localhost/onlineedu/public/course_pdfs/".$pdf_path;
-$pdf_path = "https://onlineedu.madhusudhank.com/onlineedu/course_pdfs/".$pdf_path;
+$pdf_path = "https://onlineedu.madhusudhank.com/course_pdfs/".$pdf_path;
 // echo $pdf_path;
 // exit;
 
@@ -38,7 +38,7 @@ echo "<input type='hidden' value='{$pdf_path}' id='doc-pdf-url'>";
                     window.event.cancelBubble = true;
                 }
             }
-            setTimeout(myFunction(), 3000);
+            setTimeout(myFunction(), 6000);
 
         }
         $(document).contextmenu(function() { return false;});
@@ -67,12 +67,13 @@ echo "<input type='hidden' value='{$pdf_path}' id='doc-pdf-url'>";
              
     </script>
 <script>
-    var current_count= 3;
+    var current_count= 4;
 
 function countDown() {
             var countVal = "";
      if ( current_count >= 0 ) {
-               countVal = "<h1> Loading... " + current_count + " sec.</h1>";
+            //    countVal = "<h1> Loading... " + "" + " sec.</h1>";
+               countVal = "<h1> Loading...</h1>";
                current_count--;
              }
      else {
