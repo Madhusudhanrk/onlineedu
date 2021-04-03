@@ -31,12 +31,13 @@
 			$("#password").change(function(){
 				var password=$("#password").val();
 				var strength=0;
+					if (password.match(/([A-Z])/)) strength += 1
 					if (password.match(/([a-zA-Z])/)) strength += 1
 					if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) strength += 1
 					if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
 					if (password.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
-							if (password.length >=6) {
-								if (strength > 2) {
+							if (password.length >=8) {
+								if (strength > 3) {
 									$("#pass-err").css("display","none");
 								} else{
 									$("#pass-err").css("display","block");
@@ -122,35 +123,35 @@
 							</div>
 
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="email" name="reference_admin_email" class="form-control" placeholder="Reference Admin Email">
+								<input type="email" name="reference_admin_email" class="form-control" autocomplete="off" placeholder="Reference Admin Email" required>
 								<div class="form-control-feedback">
 									<i class="icon-user text-muted"></i>
 								</div>
 							</div>
 
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="email" name="admin_email" class="form-control" placeholder="New Admin Email">
+								<input type="email" name="admin_email" class="form-control" autocomplete="off" placeholder="New Admin Email" required>
 								<div class="form-control-feedback">
 									<i class="icon-user text-muted"></i>
 								</div>
 							</div>
 
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="text" name="password" id="password" class="form-control" placeholder="Password" minlength="6" maxlength="8">
+								<input type="password" name="password" id="password" class="form-control" placeholder="Password" minlength="8" maxlength="8" autocomplete="off" required>
 								<div class="form-control-feedback">
 									<i class="icon-lock2 text-muted"></i>
 								</div>
 								@if ($errors->has('password')) <p style="color:rgb(233, 131, 14);">{{ $errors->first('password') }}</p> 
                                 @endif
-                            <span  id="pass-err" style="color:rgb(233, 131, 14);display:none;">Password should contain alpha, numeric, special charecter, and minimum length 6 digits</span>
+                            <span  id="pass-err" style="color:red;display:none;">Password must contain  1 cap & 1 small letter, 1 num, 1 special char and minimum 8 char.</span>
 							</div>
 
 							<div class="form-group has-feedback has-feedback-left">
-								<input type="text" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm Password" minlength="6" maxlength="8">
+								<input type="password" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm Password" minlength="8" maxlength="8" autocomplete="off" required>
 								<div class="form-control-feedback">
 									<i class="icon-lock2 text-muted"></i>
 								</div>
-								@if ($errors->has('cpassword')) <p style="color:rgb(233, 131, 14);">{{ $errors->first('cpassword') }}</p> @endif
+								@if ($errors->has('cpassword')) <p style="color:red;">{{ $errors->first('cpassword') }}</p> @endif
 							</div>
 
 							<div class="form-group">
